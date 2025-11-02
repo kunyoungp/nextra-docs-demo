@@ -1,0 +1,60 @@
+# FactChat API
+
+## API Overview
+
+The Mindlogic API provides a unified AI interface to easily work with leading LLMs such as OpenAI, Anthropic, and Google. It supports diverse use cases including text generation, image creation, web searches, and document summarization.
+
+## Authentication
+
+### API Key Generation
+
+1. Navigate to **Developer Settings** in the left-hand menu
+2. Click **"Generate API Key"** in the top-right corner
+3. Store the key securely—it cannot be retrieved again
+
+### Using Your API Key
+
+Use the Bearer token format in your requests:
+
+```
+Authorization: Bearer $YOUR_API_KEY
+```
+
+## Supported APIs
+
+### Text Generation APIs
+
+| API Endpoint | Key Models |
+|---|---|
+| openai/chat/completions | gpt-5-chat-latest, gpt-5, gpt-5-mini, o3-mini, sonar-pro |
+| anthropic/messages | claude-sonnet-4-5-20250929, claude-opus-4-1-20250805 |
+| google/models/generate-content | gemini-2.5-flash, gemini-2.5-pro |
+
+### Image Generation APIs
+
+| API Endpoint | Supported Model |
+|---|---|
+| openai/images/generate | gpt-image-1 |
+| google/models/generate-images | imagen-3.0-generate-002 |
+| google/models/edit-image | imagen-3.0-capability-001 |
+
+## Important Notes
+
+- API calls are deducted from the credit of the account that created the API key
+- Model availability varies by customer subscription
+- Currently available only to FactChat platform adopters
+- For on-premise deployments, use your designated URL instead of the cloud endpoint
+
+## Example Usage
+
+```bash
+curl -X POST https://api.mindlogic.ai/v1/openai/chat/completions \
+  -H "Authorization: Bearer $YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gpt-5-chat-latest",
+    "messages": [
+      {"role": "user", "content": "Hello, how are you?"}
+    ]
+  }'
+```
