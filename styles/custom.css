@@ -1,0 +1,222 @@
+/* FactChat Custom Theme Styles */
+
+:root {
+  /* Primary Colors - FactChat Blue */
+  --factchat-primary: #1751D0;
+  --factchat-primary-dark: #0F3DA0;
+  --factchat-primary-light: #2E6AE5;
+
+  /* Neutral Colors */
+  --factchat-bg-light: #F4F5F6;
+  --factchat-bg-white: #FFFFFF;
+  --factchat-text-dark: #121315;
+  --factchat-text-gray: #6B7280;
+  --factchat-border: #E5E7EB;
+
+  /* Semantic Colors */
+  --factchat-success: #10B981;
+  --factchat-error: #EF4444;
+  --factchat-warning: #F59E0B;
+
+  /* Typography */
+  --factchat-font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Noto Sans', sans-serif;
+  --factchat-font-mono: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  /* Border Radius */
+  --factchat-radius-sm: 6px;
+  --factchat-radius-md: 8px;
+  --factchat-radius-lg: 12px;
+
+  /* Shadows */
+  --factchat-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --factchat-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --factchat-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Font */
+body {
+  font-family: var(--factchat-font-family);
+}
+
+/* Code blocks */
+code {
+  font-family: var(--factchat-font-mono);
+  border-radius: var(--factchat-radius-sm);
+}
+
+pre {
+  border-radius: var(--factchat-radius-md);
+}
+
+/* Links - FactChat Blue */
+a {
+  color: var(--factchat-primary);
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: var(--factchat-primary-dark);
+}
+
+/* Primary Button/Link Colors */
+.nextra-nav-container a[href*="github"] {
+  color: var(--factchat-primary);
+}
+
+/* Sidebar styling */
+.nextra-sidebar-container {
+  border-right: 1px solid var(--factchat-border);
+}
+
+.nextra-sidebar-container nav a {
+  border-radius: var(--factchat-radius-sm);
+  transition: all 150ms ease;
+}
+
+.nextra-sidebar-container nav a:hover {
+  background-color: var(--factchat-bg-light);
+}
+
+.nextra-sidebar-container nav a[aria-selected="true"] {
+  background-color: var(--factchat-primary);
+  color: white;
+  font-weight: 600;
+}
+
+/* Table of Contents */
+.nextra-toc {
+  border-left: 1px solid var(--factchat-border);
+}
+
+.nextra-toc a {
+  border-radius: var(--factchat-radius-sm);
+}
+
+.nextra-toc a:hover {
+  color: var(--factchat-primary);
+}
+
+.nextra-toc a[aria-selected="true"] {
+  color: var(--factchat-primary);
+  font-weight: 600;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--factchat-text-dark);
+  font-weight: 600;
+}
+
+/* Cards and callouts */
+.nextra-card {
+  border-radius: var(--factchat-radius-lg);
+  border: 1px solid var(--factchat-border);
+  transition: all 200ms ease;
+}
+
+.nextra-card:hover {
+  border-color: var(--factchat-primary);
+  box-shadow: var(--factchat-shadow-md);
+}
+
+/* Tables */
+table {
+  border-radius: var(--factchat-radius-md);
+  overflow: hidden;
+}
+
+thead {
+  background-color: var(--factchat-bg-light);
+}
+
+th {
+  color: var(--factchat-text-dark);
+  font-weight: 600;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--factchat-border);
+}
+
+tbody tr:hover {
+  background-color: var(--factchat-bg-light);
+}
+
+/* Search input */
+.nextra-search input {
+  border-radius: var(--factchat-radius-md);
+  border: 1px solid var(--factchat-border);
+}
+
+.nextra-search input:focus {
+  border-color: var(--factchat-primary);
+  box-shadow: 0 0 0 3px rgba(23, 81, 208, 0.1);
+}
+
+/* Navigation bar */
+.nextra-nav-container {
+  border-bottom: 1px solid var(--factchat-border);
+  background-color: var(--factchat-bg-white);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--factchat-border);
+  background-color: var(--factchat-bg-light);
+}
+
+/* Inline code */
+:not(pre) > code {
+  background-color: var(--factchat-bg-light);
+  color: var(--factchat-primary);
+  padding: 2px 6px;
+  border-radius: var(--factchat-radius-sm);
+  font-size: 0.9em;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--factchat-primary);
+  background-color: var(--factchat-bg-light);
+  border-radius: var(--factchat-radius-sm);
+  padding: 12px 16px;
+  margin: 16px 0;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--factchat-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--factchat-text-gray);
+  border-radius: var(--factchat-radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--factchat-primary);
+}
+
+/* Dark mode adjustments */
+.dark {
+  --factchat-bg-light: #1F2937;
+  --factchat-bg-white: #111827;
+  --factchat-text-dark: #F9FAFB;
+  --factchat-text-gray: #9CA3AF;
+  --factchat-border: #374151;
+}
+
+.dark .nextra-sidebar-container nav a[aria-selected="true"] {
+  background-color: var(--factchat-primary);
+  color: white;
+}
+
+.dark :not(pre) > code {
+  background-color: var(--factchat-bg-light);
+  color: var(--factchat-primary-light);
+}
