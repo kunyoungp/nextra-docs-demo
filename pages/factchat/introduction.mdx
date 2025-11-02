@@ -1,8 +1,15 @@
+import { Info, Warning, Success, Tip } from '../../components/callout'
+import { Steps, Step } from '../../components/steps'
+
 # FactChat Introduction
 
 ## What is FactChat?
 
 FactChat is a generative AI-powered chatbot platform that allows anyone to train AI with documents and build purpose-driven chatbots easily and efficiently.
+
+<Info title="Platform Overview">
+FactChat combines state-of-the-art language models with document training capabilities to create specialized AI assistants tailored to your organization's needs.
+</Info>
 
 ## Key Benefits
 
@@ -24,11 +31,43 @@ FactChat offers ChatGPT-level user experience powered by models like GPT and Cla
 
 ## System Requirements
 
+<Warning title="Minimum Requirements">
+Ensure your system meets these requirements for optimal performance:
+
 - **RAM**: Minimum 4GB (8GB recommended)
 - **Processor**: Dual-core or higher
 - **Internet**: Stable broadband connection
 - **Screen resolution**: 1024x768 or higher
+</Warning>
 
 ## Getting Started
 
-FactChat provides structured guidance through product introduction, getting-started guides, and feature-specific documentation to help users maximize the platform's capabilities.
+<Steps>
+  <Step title="Sign Up and Login">
+    Create your FactChat account and log in to access the platform dashboard. New users receive initial credits to explore all features.
+  </Step>
+
+  <Step title="Create Your First Chatbot">
+    Navigate to the chatbot creation wizard and select your preferred base model (GPT, Claude, or Gemini). Give your chatbot a descriptive name and purpose.
+  </Step>
+
+  <Step title="Train with Documents">
+    Upload up to 100 documents to train your chatbot on domain-specific knowledge. Supported formats include PDF, DOCX, TXT, and Markdown.
+
+    <Tip title="Training Best Practices">
+    For best results, use well-structured documents with clear headings and consistent formatting. Remove any unnecessary content before uploading.
+    </Tip>
+  </Step>
+
+  <Step title="Test and Deploy">
+    Test your chatbot with sample queries to verify it responds accurately. Once satisfied, deploy it for your team or organization to use.
+
+    <Success>
+    Your chatbot is now live! You can continue to refine it by adding more documents or adjusting its configuration.
+    </Success>
+  </Step>
+</Steps>
+
+<Info title="Next Steps">
+Explore the [API Documentation](/factchat/api) to integrate FactChat programmatically into your applications, or visit our advanced guides for power user features.
+</Info>
