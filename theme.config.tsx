@@ -1,5 +1,6 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import { PageFeedback } from './components/page-feedback'
 
 const config: DocsThemeConfig = {
   logo: (
@@ -45,6 +46,14 @@ const config: DocsThemeConfig = {
   },
   toc: {
     backToTop: true,
+  },
+  main: ({ children }) => {
+    return (
+      <>
+        {children}
+        <PageFeedback />
+      </>
+    )
   },
 }
 

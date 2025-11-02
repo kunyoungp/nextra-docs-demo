@@ -1,0 +1,38 @@
+import { FeedbackAnalytics } from '../components/feedback-analytics'
+
+# Feedback Analytics Dashboard
+
+This page demonstrates the feedback analytics system built into the documentation.
+
+## How It Works
+
+The feedback widget appears at the bottom of every documentation page, allowing users to:
+
+1. **Rate the page** with thumbs up or thumbs down
+2. **Provide comments** explaining their feedback (optional)
+3. **Track satisfaction** across all documentation pages
+
+All feedback is stored locally in this demo (in production, it would be sent to an analytics backend).
+
+## Analytics Dashboard
+
+<FeedbackAnalytics />
+
+## Privacy & Data
+
+- Feedback is anonymous and does not collect personal information
+- Only page paths, ratings, and optional comments are stored
+- No tracking cookies or external analytics services are used in this demo
+- Data helps improve documentation quality and identify problem areas
+
+## Implementation Details
+
+The feedback system includes:
+
+- **PageFeedback Component**: Embedded in every page footer
+- **LocalStorage Persistence**: Feedback stored client-side (demo mode)
+- **Analytics Aggregation**: Real-time statistics per page
+- **Satisfaction Metrics**: Percentage-based helpfulness scores
+- **Recent Feedback Log**: Chronological view of submissions
+
+Navigate to other documentation pages and submit feedback to see the analytics update!
