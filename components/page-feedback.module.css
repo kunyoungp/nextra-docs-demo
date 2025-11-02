@@ -1,0 +1,367 @@
+.feedback {
+  margin: 64px 0 32px 0;
+  padding: 32px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+}
+
+:global(.dark) .feedback {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-color: #334155;
+}
+
+.question {
+  margin-bottom: 16px;
+}
+
+.question p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary, #1e293b);
+  text-align: center;
+}
+
+:global(.dark) .question p {
+  color: var(--text-primary, #f1f5f9);
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.feedbackButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary, #475569);
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 100px;
+  justify-content: center;
+}
+
+:global(.dark) .feedbackButton {
+  background: #334155;
+  border-color: #475569;
+  color: var(--text-primary, #cbd5e1);
+}
+
+.feedbackButton:hover:not(:disabled) {
+  border-color: #1751D0;
+  background: #f8faff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(23, 81, 208, 0.15);
+}
+
+:global(.dark) .feedbackButton:hover:not(:disabled) {
+  background: #1e3a5f;
+  box-shadow: 0 4px 12px rgba(23, 81, 208, 0.3);
+}
+
+.feedbackButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.feedbackButton.active {
+  border-color: #1751D0;
+  background: #1751D0;
+  color: white;
+}
+
+.feedbackButton.active:hover {
+  background: #1445b8;
+}
+
+.icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.commentBox {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e2e8f0;
+  animation: slideDown 0.3s ease-out;
+}
+
+:global(.dark) .commentBox {
+  border-top-color: #475569;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.commentLabel {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary, #334155);
+}
+
+:global(.dark) .commentLabel {
+  color: var(--text-primary, #cbd5e1);
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text-primary, #1e293b);
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+  transition: border-color 0.2s;
+}
+
+:global(.dark) .textarea {
+  background: #0f172a;
+  border-color: #475569;
+  color: var(--text-primary, #f1f5f9);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #1751D0;
+  box-shadow: 0 0 0 3px rgba(23, 81, 208, 0.1);
+}
+
+.textarea::placeholder {
+  color: #94a3b8;
+}
+
+:global(.dark) .textarea::placeholder {
+  color: #64748b;
+}
+
+.commentActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.charCount {
+  font-size: 0.8rem;
+  color: var(--text-secondary, #64748b);
+}
+
+:global(.dark) .charCount {
+  color: var(--text-secondary, #94a3b8);
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.cancelButton {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary, #64748b);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+:global(.dark) .cancelButton {
+  border-color: #475569;
+  color: var(--text-secondary, #94a3b8);
+}
+
+.cancelButton:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: var(--text-primary, #334155);
+}
+
+:global(.dark) .cancelButton:hover {
+  background: #1e293b;
+  color: var(--text-primary, #cbd5e1);
+}
+
+.submitButton {
+  padding: 8px 20px;
+  background: #1751D0;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: #1445b8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(23, 81, 208, 0.3);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submitted {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.submittedIcon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.submittedText {
+  flex: 1;
+}
+
+.submittedTitle {
+  margin: 0 0 4px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary, #0f172a);
+}
+
+:global(.dark) .submittedTitle {
+  color: var(--text-primary, #f1f5f9);
+}
+
+.submittedSubtitle {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #64748b);
+}
+
+:global(.dark) .submittedSubtitle {
+  color: var(--text-secondary, #94a3b8);
+}
+
+.resetButton {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary, #64748b);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+:global(.dark) .resetButton {
+  border-color: #475569;
+  color: var(--text-secondary, #94a3b8);
+}
+
+.resetButton:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: var(--text-primary, #334155);
+}
+
+:global(.dark) .resetButton:hover {
+  background: #1e293b;
+  border-color: #64748b;
+  color: var(--text-primary, #cbd5e1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .feedback {
+    padding: 24px 16px;
+    margin: 48px 0 24px 0;
+  }
+
+  .question p {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: row;
+  }
+
+  .feedbackButton {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .submitted {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .submittedIcon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.75rem;
+  }
+
+  .commentActions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .actionButtons {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .cancelButton,
+  .submitButton {
+    flex: 1;
+  }
+
+  .charCount {
+    text-align: right;
+  }
+}
