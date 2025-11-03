@@ -1,0 +1,256 @@
+.tocSidebar {
+  position: sticky;
+  top: 80px;
+  width: 280px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.tocSidebar.collapsed .tocNav {
+  display: none;
+}
+
+.tocSidebar.collapsed .progressBar {
+  display: none;
+}
+
+.tocHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.tocTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1e293b;
+  background: linear-gradient(135deg, #1751D0 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.toggleButton {
+  padding: 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggleButton:hover {
+  background: #f1f5f9;
+  color: #1751D0;
+}
+
+.toggleIcon {
+  transition: transform 0.3s ease;
+}
+
+.collapsed .toggleIcon {
+  transform: rotate(-90deg);
+}
+
+.tocNav {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tocList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tocItem {
+  margin: 0;
+  padding: 0;
+}
+
+.tocLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  margin: 2px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #475569;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.tocLink:hover {
+  background: linear-gradient(135deg, rgba(23, 81, 208, 0.05) 0%, rgba(23, 81, 208, 0.02) 100%);
+  color: #1751D0;
+  border-color: rgba(23, 81, 208, 0.2);
+}
+
+.tocLink.active {
+  background: linear-gradient(135deg, rgba(23, 81, 208, 0.1) 0%, rgba(23, 81, 208, 0.05) 100%);
+  color: #1751D0;
+  font-weight: 600;
+  border-color: #1751D0;
+}
+
+.tocLinkText {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.activeIndicator {
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #1751D0 0%, #3b82f6 100%);
+  border-radius: 50%;
+  margin-left: 8px;
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+.progressBar {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.progressFill {
+  height: 4px;
+  background: linear-gradient(90deg, #1751D0 0%, #3b82f6 100%);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+  box-shadow: 0 2px 4px rgba(23, 81, 208, 0.3);
+}
+
+/* Scrollbar styling */
+.tocSidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tocSidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tocSidebar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.tocSidebar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark mode support */
+:global(.dark) .tocSidebar {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border-color: #334155;
+}
+
+:global(.dark) .tocHeader {
+  border-bottom-color: #334155;
+}
+
+:global(.dark) .tocTitle {
+  color: #e2e8f0;
+}
+
+:global(.dark) .toggleButton {
+  color: #94a3b8;
+}
+
+:global(.dark) .toggleButton:hover {
+  background: #334155;
+  color: #3b82f6;
+}
+
+:global(.dark) .tocLink {
+  color: #cbd5e1;
+}
+
+:global(.dark) .tocLink:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+:global(.dark) .tocLink.active {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+:global(.dark) .progressBar {
+  border-top-color: #334155;
+}
+
+:global(.dark) .tocSidebar::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+:global(.dark) .tocSidebar::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .tocSidebar {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    top: auto;
+    width: 320px;
+    max-height: 400px;
+    z-index: 100;
+  }
+}
+
+@media (max-width: 640px) {
+  .tocSidebar {
+    width: calc(100vw - 48px);
+    left: 24px;
+    right: 24px;
+  }
+}

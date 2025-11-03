@@ -1,0 +1,253 @@
+import TocSidebar, { extractHeadings } from '../../components/toc-sidebar'
+import { useEffect, useState } from 'react'
+
+export function TocWrapper() {
+  const [headings, setHeadings] = useState([])
+
+  useEffect(() => {
+    // Extract headings after component mounts
+    const tocHeadings = extractHeadings()
+    setHeadings(tocHeadings)
+  }, [])
+
+  return <TocSidebar headings={headings} />
+}
+
+<div style={{ display: 'flex', gap: '32px', position: 'relative' }}>
+  <div style={{ flex: 1, minWidth: 0 }}>
+
+# FactChat Features Guide
+
+FactChat offers a comprehensive suite of features designed to empower organizations with AI-driven chatbot capabilities. This guide covers all major features and how to use them effectively.
+
+## Document Training
+
+### Upload Documents
+
+FactChat allows you to train your chatbot with up to 100 documents, ensuring domain-specific accuracy and relevance.
+
+#### Supported File Formats
+
+The platform supports various document formats including:
+- PDF documents
+- Word files (.doc, .docx)
+- Text files (.txt)
+- Markdown files (.md)
+- CSV data files
+
+#### Best Practices
+
+For optimal training results, follow these recommendations:
+- Ensure documents are well-structured with clear headings
+- Remove sensitive information before uploading
+- Use consistent terminology across documents
+- Keep file sizes under 10MB for faster processing
+
+### Training Process
+
+The training process is automated and typically completes within minutes. The system analyzes your documents and creates a knowledge base that the chatbot uses to generate accurate responses.
+
+## Chatbot Customization
+
+### Personality Settings
+
+Customize your chatbot's personality to match your brand voice and user expectations.
+
+#### Tone Configuration
+
+Choose from various tone options:
+- **Professional**: Formal and business-oriented
+- **Friendly**: Casual and approachable
+- **Technical**: Detailed and precise
+- **Educational**: Informative and instructive
+
+#### Response Length
+
+Control how verbose your chatbot's responses should be:
+- Short and concise
+- Medium length with details
+- Comprehensive explanations
+
+### Appearance Customization
+
+#### Theme Options
+
+FactChat provides multiple theme options to match your branding:
+- Light theme with customizable accent colors
+- Dark theme for modern interfaces
+- Custom CSS for advanced styling
+
+#### Avatar and Branding
+
+Personalize the chatbot's visual identity:
+- Upload custom avatar images
+- Set brand colors and gradients
+- Configure chat bubble styles
+- Customize header and footer text
+
+## Integration Options
+
+### Web Integration
+
+Embed FactChat on your website with a simple code snippet.
+
+#### JavaScript Embed
+
+```javascript
+<script src="https://factchat.example.com/embed.js"></script>
+<script>
+  FactChat.init({
+    botId: 'your-bot-id',
+    theme: 'light',
+    position: 'bottom-right'
+  })
+</script>
+```
+
+#### WordPress Plugin
+
+Install the FactChat WordPress plugin for seamless integration with your WordPress site.
+
+### API Integration
+
+FactChat provides a robust API for custom integrations.
+
+#### Authentication
+
+All API requests require authentication using API keys:
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+     https://api.factchat.example.com/v1/chat
+```
+
+#### Chat API
+
+Send messages programmatically and receive AI-generated responses:
+
+```json
+{
+  "message": "What are your business hours?",
+  "conversationId": "optional-conversation-id",
+  "context": {}
+}
+```
+
+## Analytics and Insights
+
+### Conversation Analytics
+
+Track important metrics to understand chatbot performance:
+- Total conversations
+- Average response time
+- User satisfaction ratings
+- Most asked questions
+- Peak usage times
+
+### User Feedback
+
+#### Satisfaction Ratings
+
+Users can rate chatbot responses with thumbs up/down, helping you identify areas for improvement.
+
+#### Comment Collection
+
+Gather detailed feedback through optional comment forms that appear after conversations.
+
+## Security Features
+
+### Data Protection
+
+FactChat ensures your data remains secure:
+- End-to-end encryption for all communications
+- Data stored on internal infrastructure only
+- No external data transmission
+- Regular security audits
+- GDPR compliance
+
+### Access Control
+
+#### User Roles
+
+Manage team access with role-based permissions:
+- **Admin**: Full system access
+- **Editor**: Manage content and settings
+- **Analyst**: View analytics only
+- **Viewer**: Read-only access
+
+#### API Security
+
+Secure your API integrations with:
+- API key rotation
+- IP whitelisting
+- Rate limiting
+- Request signing
+
+## Advanced Features
+
+### Multi-Language Support
+
+FactChat supports multiple languages for global reach:
+- Automatic language detection
+- 50+ supported languages
+- Custom translation models
+- Language-specific training data
+
+### Context Awareness
+
+The chatbot maintains conversation context to provide coherent, relevant responses across multiple exchanges.
+
+#### Session Management
+
+- Conversations persist across page refreshes
+- Context window of up to 10 previous messages
+- Automatic session timeout after inactivity
+
+### Intent Recognition
+
+Advanced natural language processing identifies user intent to provide accurate responses even when questions are phrased differently.
+
+## Performance Optimization
+
+### Response Speed
+
+FactChat is optimized for fast response times:
+- Average response time under 2 seconds
+- Efficient caching mechanisms
+- Optimized model inference
+- CDN-delivered assets
+
+### Scalability
+
+The platform scales automatically to handle:
+- Thousands of concurrent users
+- High message volumes
+- Large document repositories
+- Multiple chatbot instances
+
+## Support and Maintenance
+
+### Regular Updates
+
+FactChat receives regular updates with:
+- New features and improvements
+- Security patches
+- Performance enhancements
+- Bug fixes
+
+### Technical Support
+
+Access support through multiple channels:
+- Email support within 24 hours
+- Live chat during business hours
+- Comprehensive documentation
+- Community forums
+- Video tutorials
+
+## Getting Help
+
+If you need assistance with any features, consult our documentation or contact our support team. We're here to help you get the most out of FactChat.
+
+  </div>
+  <TocWrapper />
+</div>
